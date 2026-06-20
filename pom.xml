@@ -51,7 +51,7 @@
 </distributionManagement>
 
 <dependencyManagement>
-    <dependencies>
+    
     <dependencies>
       <!-- Arquillian Bill Of Management used to reduce collision between testing
       dependencies. Using a dependency manager we don't need to specify the version of

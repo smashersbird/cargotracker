@@ -23,8 +23,11 @@
     <url>https://github.com/eclipse-ee4j/cargotracker/issues</url>
   </issueManagement>
   <properties>
-    <maven.compiler.release>11</maven.compiler.release>
-    <jakartaee.api.version>10.0.0</jakartaee.api.version>
+    <maven.compiler.release>11</maven.compiler.release> 
+            <sonar.host.url> http://13.233.102.252:9000/ </sonar.host.url>
+    <sonar.login>admin</sonar.login>
+    <sonar.password> Mallesh@4209</sonar.password>
+           <jakartaee.api.version>10.0.0</jakartaee.api.version>
     <surefire.version>3.5.2</surefire.version>
     <dependency.plugin.version>3.8.1</dependency.plugin.version>
     <cargo.plugin.version>1.10.18</cargo.plugin.version>
@@ -33,7 +36,18 @@
     <payara.arquillian.adapter.version>3.1</payara.arquillian.adapter.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>    
   </properties>
-  <dependencyManagement>
+  <dependencyManagement> 
+            <repository>
+        <id>nexus</id>
+        <name>Nexus Release Repository</name>
+        <url> http://3.110.204.251:8081/repository/cargo-nexus-release/ </url>
+    </repository>
+
+    <snapshotRepository>
+        <id>nexus</id>
+        <name>Nexus Snapshot Repository</name>
+        <url> http://3.110.204.251:8081/repository/cargo-nexus-snapshot/ </url>
+    </snapshotRepository>
     <dependencies>
       <!-- Arquillian Bill Of Management used to reduce collision between testing
       dependencies. Using a dependency manager we don't need to specify the version of
